@@ -6,7 +6,8 @@ import sys
 
 
 def main():
-    print("Run test project " + datetime.datetime.now())
+    print("Run test project")
+    print(datetime.datetime.now())
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'test.settings')
     try:
