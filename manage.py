@@ -2,9 +2,11 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from xmlrpc.client import DateTime
 
 
 def main():
+    print("Run test project " + DateTime.value)
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'test.settings')
     try:
