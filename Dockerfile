@@ -14,8 +14,8 @@ COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY /test .
-COPY manage.py .
+COPY /test /app/test/.
+COPY manage.py /app/.
 
 EXPOSE 8000
 
