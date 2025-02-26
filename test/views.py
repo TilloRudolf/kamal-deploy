@@ -5,4 +5,4 @@ from django.views import View
 class HealthCheckView(View):
     def get(self, request, *args, **kwargs):
         # Add any additional checks here (e.g., database connectivity)
-        return JsonResponse({"status": "ok"})
+        return JsonResponse({"status": "ok"}, status=200)

@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('health/', HealthCheckView.as_view(), name='health_check'),
     path('health/', HealthCheckView.as_view()),
+    path('up/', HealthCheckView.as_view()),
 ]
