@@ -19,11 +19,9 @@ COPY /test /app/test/.
 COPY manage.py /app/.
 
 EXPOSE 8000
-#EXPOSE 80
 
 # Define the health check
 HEALTHCHECK --interval=10s --timeout=5s --retries=3 --start-period=10s \
   CMD curl -f http://localhost:8000/health || exit 1
 
-#CMD ["python", "manage.py", "runserver"]
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
