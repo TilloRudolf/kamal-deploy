@@ -4,6 +4,11 @@ service: kamal-deploy
 # Name of the container image.
 image: tillorudolf/kamal-deploy
 
+<% require "dotenv"; Dotenv.load(".env") %>
+env:
+   secret:
+     - KAMAL_REGISTRY_PASSWORD
+
 # Deploy to these servers.
 servers:
   web:
