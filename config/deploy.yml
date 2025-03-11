@@ -17,6 +17,12 @@ servers:
     cmd: "python manage.py runserver 0.0.0.0:8000"
     options:
       publish: 8000:8000
+  web-2:
+    hosts:
+     - 138.68.85.76
+    cmd: "python manage.py runserver 0.0.0.0:8000"
+    options:
+      publish: 8001:8000
 #      expose: "8000"
   # job:
   #   hosts:
