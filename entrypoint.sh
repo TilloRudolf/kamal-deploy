@@ -9,5 +9,5 @@ if [ "$RUN_ENTRYPOINT" = "true" ]; then
     exec "$@"
 else
     echo "Skipping entrypoint execution."
-#    exec "$@"  # Start container normally
+    exec "$@"  # Start container normally
 fi
