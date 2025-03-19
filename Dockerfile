@@ -23,8 +23,8 @@ COPY entrypoint.sh /app/.
 EXPOSE 8000
 
 #ENTRYPOINT python manage.py migrate
-ENTRYPOINT ["ls"]
-#ENTRYPOINT ["/entrypoint.sh"]
+#ENTRYPOINT ["ls"]
+ENTRYPOINT ["./entrypoint.sh"]
 
 # Define the health check
 #HEALTHCHECK --interval=10s --timeout=5s --retries=3 --start-period=10s \
