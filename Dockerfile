@@ -19,6 +19,7 @@ COPY /test /app/test/.
 COPY manage.py /app/.
 COPY test.txt /app/.
 COPY entrypoint.sh /app/.
+RUN chmod +x entrypoint.sh
 
 EXPOSE 8000
 
