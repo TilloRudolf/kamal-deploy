@@ -18,8 +18,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY /test /app/test/.
 COPY manage.py /app/.
 COPY test.txt /app/.
+COPY entrypoint.sh /app/.
 
 EXPOSE 8000
+
+#ENTRYPOINT python manage.py migrate
+ENTRYPOINT ["/entrypoint.sh"]
 
 # Define the health check
 #HEALTHCHECK --interval=10s --timeout=5s --retries=3 --start-period=10s \
