@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+echo "Kamal version: "
+echo $KAMAL_VERSION
+
 if [ "$RUN_ENTRYPOINT" = "true" ]; then
     echo "Executing entrypoint script..."
     # Main process
