@@ -13,5 +13,5 @@ class HealthCheckView(View):
     def get(self, request, *args, **kwargs):
         # Add any additional checks here (e.g., database connectivity)
         version = os.getenv("KAMAL_VERSION")
-        version2 = os.getenv("KAMAL_VERSION2")
+        version2 = os.getenv("KAMAL_VERSION2", "not_set")
         return JsonResponse({"status": "ok", "start-time": startDate, "version": version, "version2": version2, "marker": marker}, status=200)
