@@ -4,7 +4,7 @@ set -e
 echo "Kamal version: "
 echo $KAMAL_VERSION
 echo "Env file: "
-echo @ENV_FILE
+echo $ENV_FILE
 
 if [ "$RUN_ENTRYPOINT" = "true" ]; then
     echo "Executing entrypoint script..."
