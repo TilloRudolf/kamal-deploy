@@ -9,12 +9,19 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
+
+import dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+ENV_FILE = os.environ.get("ENV_FILE", "local.env")
+dotenv.load_dotenv(ENV_FILE)
+RABBIT_CONSUMER_THREADS_COUNT = int(os.environ["RABBIT_CONSUMER_THREADS_COUNT"])
+
+print(RABBIT_CONSUMER_THREADS_COUNT)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -25,7 +32,7 @@ SECRET_KEY = 'django-insecure-3ydd6q^%3fql9#-c(^8p4_xt4)sv6(ob+8p6a(=v%b+$f&6@$8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1'] #todo check without *
 
 
 # Application definition
@@ -121,3 +128,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
